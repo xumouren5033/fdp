@@ -14,11 +14,9 @@ current_dir = os.getcwd()
 for root, dirs, files in os.walk(current_dir):
     for dir_name in dirs:
         dir_path = os.path.join(root, dir_name)
-        if dir_path!= os.path.join(current_dir, "js") and os.path.dirname(dir_path) == current_dir:
-            try:
-                os.rmdir(dir_path)
-            except OSError as e:
-                print(f"无法删除目录 {dir_path}，原因是: {e}")
+        if dir_path!= os.path.join(current_dir, "js") and dir_path!= os.path.join(current_dir, ".github") and os.path.dirname(dir_path) == current_dir:
+            import shutil
+            shutil.rmtree(dir_path)
 url = f"https://api.github.com/repos/{rpn}/releases"
 
 response = requests.get(url)
@@ -33,7 +31,7 @@ for release in releases:
     # 创建对应版本号的目录
     os.makedirs(dir_name, exist_ok=True)
     dls=""
-    # 遍历发行版中的文件（资产）
+    # 遍历发行版中的文件
     for asset in assets:
         file_name = asset["name"]
         file_url = asset["browser_download_url"]
