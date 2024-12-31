@@ -1,0 +1,31 @@
+name: Push
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    inputs:
+      target_repo:
+        description: '请输入您要获取release下载目录的仓库 示例：username/repo'
+        required: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v3
+
+      - name: Run Python script
+        run: |
+          python get.py ${{ github.event.inputs.target_repo }}
+
+      - name: Configure Git
+        run: |
+          git config user.name ${{ secrets.GIT_USERNAME }}
+          git config user.email ${{ secrets.GIT_EMAIL }}
+
+      - name: Commit and push changes
+        run: |
+          git add.
+          git commit -m "Update based on target repository"
+          git push
