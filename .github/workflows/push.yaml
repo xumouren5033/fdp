@@ -21,8 +21,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name ${{ secrets.GIT_USERNAME }}
-          git config user.email ${{ secrets.GIT_EMAIL }}
+          git config user.name 'xumouren225588'
+          git config user.email 'xumouren225588@163.com'
 
       - name: Commit and push changes
         run: |
