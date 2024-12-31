@@ -17,7 +17,6 @@ jobs:
 
       - name: Run Python script
         run: |
-          find . -mindepth 1 -maxdepth 1 -type d \(! -name "js" \) -exec rm -r {} \;
           python get.py ${{ github.event.inputs.target_repo }}
 
       - name: Configure Git
