@@ -8,7 +8,17 @@ if len(sys.argv)==2:
         f.write(rpn)
 with open("rpn.txt","r",encoding="utf-8") as f:
     rpn=f.read()
+import os
 
+current_dir = os.getcwd()
+for root, dirs, files in os.walk(current_dir):
+    for dir_name in dirs:
+        dir_path = os.path.join(root, dir_name)
+        if dir_path!= os.path.join(current_dir, "js") and os.path.dirname(dir_path) == current_dir:
+            try:
+                os.rmdir(dir_path)
+            except OSError as e:
+                print(f"无法删除目录 {dir_path}，原因是: {e}")
 url = f"https://api.github.com/repos/{rpn}/releases"
 
 response = requests.get(url)
