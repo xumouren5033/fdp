@@ -53,7 +53,7 @@ for release in releases:
     <ul id="fileList"> <!-- 添加了id属性 -->
 {dls}
     </ul>
-    <script src="/js/scr.js"></script>
+    <script src="/fdp/js/scr.js"></script>
 </body>
 
 </html>
@@ -79,7 +79,7 @@ html_text2=f'''
     <ul id="fileList"> <!-- 添加了id属性 -->
 {dls2}
     </ul>
-    <script src="/js/scr.js"></script>
+    <script src="/fdp/js/scr.js"></script>
 </body>
 
 </html>
