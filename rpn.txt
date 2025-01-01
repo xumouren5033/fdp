@@ -1,1 +1,1 @@
-Atmosphere-NX/Atmosphere
+ophub/amlogic-s9xxx-armbian
