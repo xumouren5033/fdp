@@ -14,7 +14,7 @@ current_dir = os.getcwd()
 for root, dirs, files in os.walk(current_dir):
     for dir_name in dirs:
         dir_path = os.path.join(root, dir_name)
-        if dir_path!= os.path.join(current_dir, "js") and dir_path!= os.path.join(current_dir, ".github") and os.path.dirname(dir_path) == current_dir:
+        if dir_path!= os.path.join(current_dir, "js") and dir_path!= os.path.join(current_dir, ".github") and dir_path!= os.path.join(current_dir, ".git") and os.path.dirname(dir_path) == current_dir:
             import shutil
             shutil.rmtree(dir_path)
 url = f"https://api.github.com/repos/{rpn}/releases"
