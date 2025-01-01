@@ -19,11 +19,12 @@ jobs:
 
       - name: Run Python script
         run: |
+          echo $(date) > date.txt
           python get.py ${{ github.event.inputs.target_repo }}
 
       - name: Configure Git
         run: |
-          ls -a
+          
           git config user.name 'xumouren225588'
           git config user.email 'xumouren225588@163.com'
 
