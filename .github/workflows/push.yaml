@@ -6,7 +6,7 @@ on:
     inputs:
       target_repo:
         description: '请输入您要获取release下载目录的仓库 示例：username/repo'
-        required: true
+        
 
 jobs:
   update:
