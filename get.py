@@ -36,7 +36,7 @@ for release in releases:
         file_name = asset["name"]
         file_url = asset["browser_download_url"]
         
-        dls=dls+f"""        <li><a href="https://gh.api.99988866.xyz/{file_url}">{file_name}</a></li>\n"""
+        dls=dls+f"""        <li><a href="https://ghproxy.net/{file_url}">{file_name}</a></li>\n"""
 
     html_text=f'''
 <!DOCTYPE html>
