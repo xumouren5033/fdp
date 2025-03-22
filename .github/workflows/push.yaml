@@ -25,8 +25,8 @@ jobs:
       - name: Configure Git
         run: |
           
-          git config user.name 'xumouren225588'
-          git config user.email 'xumouren225588@163.com'
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Commit and push changes
         run: |
